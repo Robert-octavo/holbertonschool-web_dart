@@ -44,9 +44,6 @@ class Password {
     if (RegExp(r'[0-9]').hasMatch(password)) {
       hasNumber = true;
     }
-    print(hasUpper);
-    print(hasLower);
-    print(hasNumber);
     return hasUpper && hasLower && hasNumber;
   }
 
