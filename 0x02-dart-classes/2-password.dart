@@ -18,18 +18,21 @@ class Password {
       if (password[i] == password[i].toLowerCase()) {
         hasLower = true;
       }
-      if (password[i] == "0" ||
-          password[i] == "1" ||
-          password[i] == "2" ||
-          password[i] == "3" ||
-          password[i] == "4" ||
-          password[i] == "5" ||
-          password[i] == "6" ||
-          password[i] == "7" ||
-          password[i] == "8" ||
-          password[i] == "9") {
-        hasNumber = true;
-      }
+      // if (password[i] == "0" ||
+      //     password[i] == "1" ||
+      //     password[i] == "2" ||
+      //     password[i] == "3" ||
+      //     password[i] == "4" ||
+      //     password[i] == "5" ||
+      //     password[i] == "6" ||
+      //     password[i] == "7" ||
+      //     password[i] == "8" ||
+      //     password[i] == "9") {
+      //   hasNumber = true;
+      // }
+    }
+    if (RegExp(r'[0-9]').hasMatch(password)) {
+      hasNumber = true;
     }
     return hasUpper && hasLower && hasNumber;
   }
