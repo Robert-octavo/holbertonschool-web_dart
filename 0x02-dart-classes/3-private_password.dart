@@ -17,25 +17,11 @@ class Password {
     bool hasLower = false;
     bool hasNumber = false;
 
-    for (int i = 0; i < _password.length; i++) {
-      if (_password[i] == _password[i].toUpperCase()) {
-        hasUpper = true;
-      }
-      if (_password[i] == _password[i].toLowerCase()) {
-        hasLower = true;
-      }
-      // if (_password[i] == "0" ||
-      //     _password[i] == "1" ||
-      //     _password[i] == "2" ||
-      //     _password[i] == "3" ||
-      //     _password[i] == "4" ||
-      //     _password[i] == "5" ||
-      //     _password[i] == "6" ||
-      //     _password[i] == "7" ||
-      //     _password[i] == "8" ||
-      //     _password[i] == "9") {
-      //   hasNumber = true;
-      // }
+    if (RegExp(r'[A-Z]').hasMatch(_password)) {
+      hasUpper = true;
+    }
+    if (RegExp(r'[a-z]').hasMatch(_password)) {
+      hasLower = true;
     }
     // check if _password contains number using RegExp
     if (RegExp(r'[0-9]').hasMatch(_password)) {
